@@ -13,14 +13,14 @@ function TrainerForm() {
     locationId: ''
   });
 
-  const [locations, setLocations] = useState([]); // To store locations from backend
+  const [locations, setLocations] = useState([]); 
 
-  // Fetch locations when the component mounts
+ 
   useEffect(() => {
     const fetchLocations = async () => {
       try {
         const response = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/locations`);
-        setLocations(response.data); // Assuming response contains an array of locations
+        setLocations(response.data); 
       } catch (error) {
         console.error('Error fetching locations:', error);
       }
@@ -40,7 +40,7 @@ function TrainerForm() {
   const handleLocationChange = (e) => {
     setTrainerData(prevState => ({
       ...prevState,
-      locationId: e.target.value // Store selected location ID
+      locationId: e.target.value 
     }));
   };
 
@@ -56,13 +56,13 @@ function TrainerForm() {
         name: trainerData.name,
         phone: trainerData.phone,
         location: {
-          id: trainerData.locationId // Send location ID to backend
+          id: trainerData.locationId 
         }
       });
 
       if (response.status === 200 || response.status === 201) {
         console.log('Trainer added successfully');
-        setTrainerData({ name: '', phone: '', locationId: '' }); // Reset form after submission
+        setTrainerData({ name: '', phone: '', locationId: '' }); 
       } else {
         console.error('Failed to add trainer');
       }
