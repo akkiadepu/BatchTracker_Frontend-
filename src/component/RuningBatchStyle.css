@@ -1,0 +1,191 @@
+.form {
+    background-color: #15172b;
+    border-radius: 20px;
+    box-sizing: border-box;
+    height: 700px;
+    padding: 20px;
+    width: 320px;
+  }
+
+  .dropdown {
+    background-color: #303245;
+    border-radius: 12px;
+    border: 0;
+    box-sizing: border-box;
+    color: #eee;
+    font-size: 18px;
+    height: 50px;
+    padding: 10px 20px;
+    width: 100%;
+    outline: none;
+    appearance: none; /* Removes the default arrow */
+    position: relative;
+    z-index: 1;
+  }
+  
+  .dropdown option {
+    background-color: #303245;
+    color: #eee;
+  }
+  
+  .dropdown:focus {
+    border-color: #dc2f55;
+  }
+  
+  .dropdown:hover {
+    cursor: pointer;
+  }
+  
+  .dropdown:focus ~ .iLabel {
+    transform: translateY(-30px) translateX(10px) scale(0.75);
+    color: #dc2f55;
+  }
+  
+  .dropdown:not(:focus) ~ .iLabel {
+    color: #808097;
+  }
+  
+  .dropdown:focus ~ .cut {
+    transform: translateY(8px);
+  }
+  
+  /* Custom arrow for dropdown */
+  .dropdown::after {
+    content: '▼';
+    font-size: 12px;
+    color: #eee;
+    position: absolute;
+    top: 18px;
+    right: 20px;
+    pointer-events: none;
+    z-index: 0;
+  }
+  
+  
+  .title {
+    color: #eee;
+    font-family: sans-serif;
+    font-size: 36px;
+    font-weight: 600;
+    margin-top: 30px;
+  }
+  
+  .subtitle {
+    color: #eee;
+    font-family: sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    margin-top: 10px;
+  }
+  
+  .input-container {
+    height: 50px;
+    position: relative;
+    width: 100%;
+    margin-bottom: 20px; /* Add space between input fields */
+}
+  
+  .ic1 {
+    margin-top: 40px;
+  }
+  
+  .ic2 {
+    margin-top: 30px;
+  }
+  
+  .input1 {
+    background-color: #303245;
+    border-radius: 12px;
+    border: 0;
+    box-sizing: border-box;
+    color: #eee;
+    font-size: 18px;
+    height: 100%;
+    outline: 0;
+    padding: 10px 20px 0;
+    width: 100%;
+    
+  }
+  
+  .cut {
+    background-color: #15172b;
+    border-radius: 10px;
+    height: 20px;
+    left: 20px;
+    position: absolute;
+    top: -20px;
+    transform: translateY(0);
+    transition: transform 200ms;
+    width: 76px;
+  }
+  
+  .cut-short {
+    width: 50px;
+  }
+  
+  .iLabel {
+    color: #65657b;
+    font-family: sans-serif;
+    left: 20px;
+    line-height: 14px;
+    pointer-events: none;
+    position: absolute;
+    transform-origin: 0 50%;
+    transition: transform 200ms, color 200ms;
+    top: 20px;
+  }
+  
+  /* .input:focus ~ .cut {
+    transform: translateY(8px);
+  }
+  
+  .input:focus ~ .iLabel {
+    transform: translateY(-30px) translateX(10px) scale(0.75);
+  }
+  
+  .input:not(:focus) ~ .iLabel {
+    color: #808097;
+  } */
+
+  .input:focus ~ .iLabel {
+    transform: translateY(-30px) translateX(10px) scale(0.75);
+    color: #dc2f55;
+  }
+  
+  /* Date input-specific style: keep label on top */
+  input[type="datetime-local"] ~ .iLabel {
+    transform: translateY(-30px) translateX(10px) scale(0.75);
+    line-height: 8px;
+    font-size: 1.4rem;
+    margin-bottom: 25%;
+  }
+  input[type="datetime-local"]{
+    margin-top: 2%;
+  }
+  
+  /* Non-focused inputs: default label style */
+  .input:not(:focus) ~ .iLabel {
+    color: #f5f5f6;
+  }
+  
+  .input:focus ~ .iLabel {
+    color: #dc2f55;
+  }
+  
+  .submit {
+    background-color: #08d;
+    border-radius: 12px;
+    border: 0;
+    box-sizing: border-box;
+    color: #eee;
+    cursor: pointer;
+    font-size: 18px;
+    height: 50px;
+    margin-top: 38px;
+    text-align: center;
+    width: 100%;
+  }
+  
+  .submit:active {
+    background-color: #06b;
+  }

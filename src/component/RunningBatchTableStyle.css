@@ -1,0 +1,130 @@
+/* table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 18px;
+    margin-bottom: 18px; 
+    padding: 0; 
+  }
+  
+  th, td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  th {
+    background-color: #f4f4f4;
+  }
+  
+  tr:hover {
+    background-color: #f1f1f1;
+  }
+  
+  button {
+    padding: 5px 10px;
+    margin: 5px;
+    border: none;
+    background-color: #007BFF;
+    color: white;
+    cursor: pointer;
+    border-radius: 4px;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+  
+  button:active {
+    background-color: #003d80;
+  }
+   */
+
+
+
+   .runningBatchTable {
+    width: 95%; /* Increase table width to 100% */
+  border-collapse: collapse;
+  background-color: #15172b;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-top: 18px;
+  margin-bottom: 18px;
+  }
+  
+  th, td {
+    text-align: center;
+  padding: 12px; /* Increased padding for better spacing */
+  width: auto; 
+  }
+  
+  th {
+    background-color: #08d;
+    color: #eee;
+    padding: 8px;
+    font-size: 18px;
+    font-weight: 600;
+  }
+  
+  td {
+    background-color: #303245;
+    color: #eee;
+    padding: 10px;
+    font-size: 16px;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #252a3d;
+  }
+  
+  tr:hover {
+    background-color: #08d;
+    color: #fff;
+  }
+  
+  td button {
+    display: inline-block;
+    background-color: #08d;
+    border: none;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 0 5px; /* Adds space between the buttons */
+  }
+  
+  td button:hover {
+    background-color: #06b;
+  }
+  
+  td button:active {
+    background-color: #003d80;
+  }
+  
+  .save-button {
+    background-color: #28a745;
+    color: white;
+  }
+  
+  .cancel-button {
+    background-color: #6c757d;
+    color: white;
+  }
+  
+  .date {
+    padding: 6px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  /* Media Queries for smaller screens */
+  @media (max-width: 768px) {
+    .runningBatchTable {
+      width: 100%;
+    }
+  
+    th, td {
+      font-size: 14px;
+    }
+  }
+  

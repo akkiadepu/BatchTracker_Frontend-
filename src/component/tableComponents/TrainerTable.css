@@ -1,0 +1,92 @@
+
+.trainer-table {
+    width: 90%;
+    border-collapse: collapse;
+    background-color: #15172b;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(244, 214, 214, 0.1);
+}
+
+.trainer-table th,
+.trainer-table td {
+    text-align: center;
+    padding: 10px;
+}
+
+.trainer-table th {
+    background-color: #08d;
+    color: #eee;
+    padding: 10px;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.trainer-table td {
+    background-color: #303245;
+    color: #eee;
+    padding: 10px;
+    font-size: 16px;
+}
+
+.trainer-table tr:nth-child(even) {
+    background-color: #252a3d;
+}
+
+.trainer-table tr:hover {
+    background-color: #08d;
+    color: #fff;
+}
+
+.update-button,
+.delete-button {
+    background-color: #08d;
+    border: none;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 0 5px;
+}
+
+.update-button:hover {
+    background-color: #06b;
+}
+
+.delete-button {
+    background-color: #d9534f;
+}
+
+.delete-button:hover {
+    background-color: #c9302c;
+}
+.save-button {
+    background-color: #28a745;
+    color: white;
+  }
+  
+  .cancel-button {
+    background-color: #6c757d;
+    color: white;
+  }
+  
+  .inputTrainer{
+    padding: 6px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+
+@media (max-width: 768px) {
+    .trainer-form-container {
+        grid-template-columns: 1fr; 
+    }
+
+    .form, .table-container {
+        width: 100%;
+    }
+
+    .trainer-table th, .trainer-table td {
+        font-size: 14px;
+    }
+}

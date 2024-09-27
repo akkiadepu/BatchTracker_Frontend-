@@ -1,0 +1,33 @@
+header {
+    background: #2b2d42; 
+    color: #edf2f4; 
+    padding: 1rem 0;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 20px;
+}
+
+.logo img {
+    width: 50px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    color: #edf2f4; 
+    text-decoration: none;
+    font-size: 1rem;
+}
