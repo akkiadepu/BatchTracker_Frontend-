@@ -9,17 +9,17 @@ function TrainerTable() {
   const [editRowId, setEditRowId] = useState(null); 
   const [editData, setEditData] = useState({ id: '', name: '', phone: '', location: '', locationId: '' });
   const [filteredTrainers, setFilteredTrainers] = useState([]);
-  const [nameFilter, setNameFilter] = useState(''); // State for name filter
-  const [locationFilter, setLocationFilter] = useState(''); // State for location filter
+  const [nameFilter, setNameFilter] = useState(''); 
+  const [locationFilter, setLocationFilter] = useState(''); 
   const [locations, setLocations] = useState([]); 
 
   const fetchTrainers = async () => {
     try {
       const response = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/trainers`);
       setTrainers(response.data);
-      setFilteredTrainers(response.data); // Initialize filteredTrainers
+      setFilteredTrainers(response.data); 
       const locationResponse = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/locations`);
-      setLocations(locationResponse.data); // Fetch locations for dropdown
+      setLocations(locationResponse.data); 
     } catch (error) {
       console.error('Error fetching trainers:', error);
     }
@@ -40,21 +40,19 @@ function TrainerTable() {
   }, []);
 
   useEffect(() => {
-    // Filter trainers based on selected name and location
     const filtered = trainers.filter(trainer => {
       const matchesName = nameFilter ? trainer.name.includes(nameFilter) : true;
       const matchesLocation = locationFilter ? trainer.location.name === locationFilter : true;
       return matchesName && matchesLocation;
     });
     setFilteredTrainers(filtered);
-  }, [nameFilter, locationFilter, trainers]); // Depend on filters and trainers
+  }, [nameFilter, locationFilter, trainers]); 
 
   const handleLocationChange = (e) => {
     const selectedLocation = e.target.value;
     setLocationFilter(selectedLocation);
-    setNameFilter(''); // Reset name filter when location changes
+    setNameFilter(''); 
 
-    // Update filtered trainers based on selected location
     const filtered = trainers.filter(trainer => trainer.location.name === selectedLocation);
     setFilteredTrainers(filtered);
   };
@@ -62,8 +60,6 @@ function TrainerTable() {
   const handleNameChange = (e) => {
     const selectedName = e.target.value;
     setNameFilter(selectedName);
-
-    // Update locationFilter based on selected name
     const trainer = trainers.find(trainer => trainer.name === selectedName);
     setLocationFilter(trainer ? trainer.location.name : '');
   };
@@ -107,18 +103,16 @@ function TrainerTable() {
 
       await axios.put(`${process.env.REACT_APP_BACKEND_URL}/trainers/${trainerId}`, updatedTrainer);
 
-      // Exit editing mode and refresh data
       fetchTrainers();
-      setEditRowId(null); // Reset edit mode
+      setEditRowId(null); 
     } catch (error) {
       console.error('Error updating trainer:', error);
     }
   };
 
-  // Cancel editing
   const handleCancel = () => {
-    setEditRowId(null); // Exit editing mode
-    setEditData({ id: '', name: '', phone: '', location: '', locationId: '' }); // Reset editData
+    setEditRowId(null); 
+    setEditData({ id: '', name: '', phone: '', location: '', locationId: '' }); 
   };
 
   // Delete function
@@ -126,7 +120,7 @@ function TrainerTable() {
     try {
       await axios.delete(`${process.env.REACT_APP_BACKEND_URL}/trainers/${trainerId}`);
       console.log('Trainer deleted successfully');
-      fetchTrainers(); // Refresh the data
+      fetchTrainers(); 
     } catch (error) {
       console.error('Error deleting trainer:', error);
     }
@@ -136,8 +130,6 @@ function TrainerTable() {
     <div>
       <h2>Trainer List</h2>
       
-
-
 <table border="1" cellPadding="10" cellSpacing="0" className="trainer-table">
         <thead>
           <tr>
@@ -149,7 +141,7 @@ function TrainerTable() {
                 ))}
               </select>
             </th>
-            <th>number</th>
+            <th>phone number</th>
             <th>
               <select value={locationFilter} onChange={handleLocationChange}>
                 <option value="">All Locations</option>
